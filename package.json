@@ -1,6 +1,6 @@
 {
   "name": "ezproject",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -22,5 +22,17 @@
     "sass": "^1.54.5",
     "vite": "^3.0.4",
     "vitest": "^0.21.0"
-  }
+  },
+  "description": "ezProject 1.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristiandmocho/ezproject.git"
+  },
+  "author": "Cristian Mocho <cristian.mocho@ezsystems.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cristiandmocho/ezproject/issues"
+  },
+  "homepage": "https://github.com/cristiandmocho/ezproject#readme"
 }

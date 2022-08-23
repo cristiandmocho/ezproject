@@ -1,9 +1,17 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
+import { useUserInfoStore } from "./stores/userinfo";
+
+import PublicTemplate from "./templates/Public.vue";
+import PrivateTemplate from "./templates/Private.vue";
+
+const userInfo = useUserInfoStore();
+
+userInfo.loadStore();
 </script>
 
 <template>
-  <RouterView />
+  <PrivateTemplate v-if="userInfo.authToken" />
+  <PublicTemplate v-if="!userInfo.authToken" />
 </template>
 
 <style scoped></style>

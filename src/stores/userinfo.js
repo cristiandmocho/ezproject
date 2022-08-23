@@ -3,10 +3,10 @@ import { defineStore } from 'pinia';
 export const useUserInfoStore = defineStore({
   id: 'userInfo',
   state: () => ({
-    name: '',
-    authToken: '',
-    email: '',
-    picture: '',
+    name: null,
+    authToken: null,
+    email: null,
+    picture: null,
   }),
   actions: {
     setName(name) {
@@ -33,6 +33,10 @@ export const useUserInfoStore = defineStore({
       );
 
       if (userInfo) this.setStore(JSON.parse(userInfo));
+    },
+    clearStore() {
+      this.$reset();
+      sessionStorage.removeItem('ezSystems.ezProject110.userInfo');
     },
   },
 });

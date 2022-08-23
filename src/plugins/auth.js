@@ -1,6 +1,6 @@
 import { useUserInfoStore } from '../stores/userinfo';
 
-export function checkAuth(to, from) {
+export function checkAuth() {
   const userInfo = useUserInfoStore();
   if (!userInfo.name) return '/login';
   return true;
@@ -8,7 +8,7 @@ export function checkAuth(to, from) {
 
 export function logout() {
   const userInfo = useUserInfoStore();
-  userInfo.clearName();
+  userInfo.clearStore();
 
   location.reload();
 }

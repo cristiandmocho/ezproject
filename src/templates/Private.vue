@@ -6,11 +6,7 @@ import { logout } from "../plugins/auth";
 import Button from "primevue/button";
 import MainMenu from "../components/MainMenu.vue";
 
-import { sendAlert } from "../services/sender";
-
 const userInfo = useUserInfoStore();
-
-sendAlert("This is an exmaple alert form the system!");
 </script>
 
 <template>
@@ -52,18 +48,19 @@ sendAlert("This is an exmaple alert form the system!");
     display: grid;
     grid-auto-flow: row;
     box-shadow: rgba(0, 0, 0, 0.3) 0 0 12px 2px;
+    border-bottom: solid 4px #ffb700;
     gap: 4px;
 
     header {
       display: grid;
       grid-auto-flow: column;
-      padding: 10px;
       background-color: hsl(0, 0%, 95%);
       justify-content: space-between;
       justify-items: center;
-      align-items: center;
 
       .logo {
+        padding: 10px;
+
         img {
           width: 150px;
         }

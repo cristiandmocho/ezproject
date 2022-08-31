@@ -11,22 +11,28 @@ const router = createRouter({
       component: () => import('../views/Projects.vue'),
     },
     {
-      path: '/tasks/:id',
+      path: '/tasks',
       name: 'tasks',
       beforeEnter: checkAuth,
       component: () => import('../views/Tasks.vue'),
     },
     {
-      path: '/meeting',
+      path: '/meetings',
       name: 'meeting',
       beforeEnter: checkAuth,
       component: () => import('../views/Meeting.vue'),
     },
     {
-      path: '/members/:id',
+      path: '/members',
       name: 'members',
       beforeEnter: checkAuth,
       component: () => import('../views/Members.vue'),
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      beforeEnter: checkAuth,
+      component: () => import('../views/Admin.vue'),
     },
     {
       path: '/login',

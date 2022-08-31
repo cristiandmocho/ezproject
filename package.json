@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173",
-    "test:unit": "vitest --environment jsdom"
+    "test:unit": "vitest --environment jsdom",
+    "fix-svgs": "svgo -f src/assets -q"
   },
   "dependencies": {
     "pinia": "^2.0.17",
@@ -20,6 +21,7 @@
     "@vue/test-utils": "^2.0.2",
     "jsdom": "^20.0.0",
     "sass": "^1.54.5",
+    "svgo": "^2.8.0",
     "vite": "^3.0.4",
     "vitest": "^0.21.0"
   },

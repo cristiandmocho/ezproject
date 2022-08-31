@@ -50,6 +50,7 @@ const isActive = (page) => {
 <style lang="scss" scoped>
 nav {
   display: grid;
+  font-size: 0.9rem;
 
   ul {
     display: grid;

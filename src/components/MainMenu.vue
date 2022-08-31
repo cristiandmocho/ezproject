@@ -3,6 +3,8 @@ import { RouterLink } from "vue-router";
 import { usePageInfoStore } from "../stores/pageinfo";
 
 const pageInfo = usePageInfoStore();
+pageInfo.loadStore();
+
 const isActive = (page) => {
   return pageInfo.page === page ? "active" : null;
 };
@@ -46,35 +48,38 @@ const isActive = (page) => {
 </template>
 
 <style lang="scss" scoped>
-nav ul {
-  padding: 10px;
+nav {
   display: grid;
-  grid-auto-flow: column;
-  justify-content: start;
-  gap: 2px;
 
-  li {
-    &.active {
-      border-bottom: #292929 solid 2px;
-    }
+  ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
 
-    a {
+    li {
       display: grid;
-      grid-template-columns: min-content auto;
-      gap: 12px;
-      align-items: center;
-      padding: 10px 18px;
-      cursor: pointer;
-      border: none;
-      background: none;
-      border-radius: 4px;
-      transition: all 0.3s ease-out;
-      color: #292929;
-      text-decoration: none;
 
-      &:hover,
-      &:focus {
-        background: hsl(0, 0%, 90%);
+      a {
+        display: grid;
+        grid-template-columns: min-content auto;
+        gap: 12px;
+        align-items: center;
+        padding: 10px 18px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        transition: all 0.3s ease-out;
+        color: #292929;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          background: hsl(0, 0%, 90%);
+        }
+      }
+
+      &.active a {
+        background: hsl(0, 0%, 85%);
       }
     }
   }

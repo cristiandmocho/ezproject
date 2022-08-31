@@ -9,9 +9,11 @@ export const usePageInfoStore = defineStore({
   actions: {
     setPage(page) {
       this.page = page;
+      this.saveStore();
     },
     setProjectId(id) {
       this.projectId = id;
+      this.saveStore();
     },
     saveStore() {
       sessionStorage.setItem(
@@ -25,6 +27,9 @@ export const usePageInfoStore = defineStore({
       );
 
       if (pageInfo) this.setStore(JSON.parse(pageInfo));
+    },
+    setStore(pageInfo) {
+      Object.assign(this, pageInfo);
     },
     clearStore() {
       this.$reset();
